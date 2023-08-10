@@ -1,0 +1,96 @@
+﻿
+@using TrainStationManagementApplication.Dto.ResponseModel;
+@model BaseResponse<TrainDto>
+@{
+    ViewData["Title"] = "UpdateTrain";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/updateTrain.css">
+</head>
+<body>
+    <form asp-action="UpdateTrain" asp-controller="Trains" enctype="multipart/form-data">
+        <div class="container">
+            <div class="layer2">
+                <div class="card">
+                    <div>
+                        <p class="p">UPDATE TRAIN</p>
+                    </div>
+                    <div class="fields">
+                        <div class="col-3">
+                            <i class="fa fa-user icon"></i>
+                            <label>Name:</label>
+                            <input type="text" name="Name" asp-for="Data.Name">
+                            <span asp-validation-for="Data.Name" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-train icon"></i>
+                            <label>Train Number:</label>
+                            <input type="tel" name="TrainNumber" asp-for="Data.TrainNumber">
+                            <span asp-validation-for="Data.TrainNumber" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-database icon"></i>
+                            <label>Capacity:</label>
+                            <input type="number" name="Capacity" asp-for="Data.Capacity">
+                            <span asp-validation-for="Data.Capacity" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-globe icon"></i>
+                            <label>Available Space:</label>
+                            <input type="number" name="AvailableSpace" asp-for="Data.AvailableSpace">
+                            <span asp-validation-for="Data.AvailableSpace" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-check-circle icon"></i>
+                            <label>Is Available:</label>
+                            <input type="checkbox" name="IsAvailable" asp-for="Data.IsAvailable">
+                            <span asp-validation-for="Data.IsAvailable" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-clock icon"></i>
+                            <label>Departure Time:</label>
+                            <input type="date" name="DepartureTime" asp-for="Data.DepartureTime">
+                            <span asp-validation-for="Data.DepartureTime" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-train icon"></i>
+                            <label>Starting Station:</label>
+                            <input type="text" name="StartingStation" asp-for="Data.StartingStation">
+                            <span asp-validation-for="Data.StartingStation" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-train icon"></i>
+                            <label>Ending Station:</label>
+                            <input type="text" name="EndingStation" asp-for="Data.EndingStation">
+                            <span asp-validation-for="Data.EndingStation" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-ruler icon"></i>
+                            <label>Distance:</label>
+                            <input type="text" name="Distance" asp-for="Data.Distance">
+                            <span asp-validation-for="Data.Distance" style="color: red"></span>
+                        </div>
+
+                        <div class="button">
+                            <button style="border-radius: 27px; background-color: var(--var-soft-blue); width: 120px;">SUBMIT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

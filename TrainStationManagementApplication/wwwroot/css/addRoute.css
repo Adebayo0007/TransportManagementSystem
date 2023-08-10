@@ -1,0 +1,119 @@
+﻿body {
+}
+body {
+    /*background: #E0E5EC;*/
+    background-color: #0077cc;
+}
+}
+
+.container {
+    background-color: #E0E5EC;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height: 60vh;
+    padding: 10px;
+    box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #fff;
+    box-sizing: border-box;
+    border-radius: 50px;
+    border: none;
+    margin-bottom: 50px;
+}
+
+.card {
+    /* background-color: #E0E5EC;
+    border: none;
+    box-shadow:9px 9px 16px rgba(163,177,198,0.6),-9px -9px 16px rgba(255,255,255,0.5);
+    border-radius: 60px;*/
+    /* bottom: 40vh; */
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    border: none;
+}
+
+.layer {
+    position: absolute;
+    /* width: 60%;*/
+    /*right: 0;*/
+    /*height: 110vh; */
+    /* background: #9c41a8; */
+    z-index: 1;
+    border-radius: 0px 60px 0px 60px;
+    /* box-shadow: 0 4px 4px rgb(0,0,0/ 25%); */
+    box-shadow: 9px 9px 16px rgba(163,177,198,0.6),-9px -9px 16px rgba(255,255,255,0.5);
+}
+
+.layer2 {
+    position: relative;
+    /* width: 10%; */
+    /* right: 0;*/
+    top: 10px;
+    /*height: 150vh; */
+    /* background: #fffd72; */
+    z-index: 1;
+    border-radius: 100px 0px 100px 0px;
+    box-shadow: 0 4px 4px rgb(0,0,0/ 25%);
+}
+
+.forgot a {
+    color: #000;
+    text-decoration: none;
+}
+
+.fields .icon {
+    margin: 0 10px -3px 25px;
+}
+
+.p {
+    margin-top: 5px;
+    font-size: 25px;
+    color: #000;
+    font-weight: bold;
+}
+
+.btn-register {
+    box-shadow: -10px -10px 15px rgba(255,255,255,0.5), 10px 10px 15px rgba(70,70,70,0.12);
+    /* background: #9c41a8; */
+    /* background: #ff0d72; */
+    /* background: #09fba8; */
+    background: #451fc2;
+    color: #fff !important;
+}
+
+
+.fields {
+    width: 100%;
+    padding: 0px 5px 5px 5px;
+}
+
+    .fields input {
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 18px;
+        color: #555;
+        padding: 20px 10px 20px 5px;
+    }
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10 {
+    margin-bottom: 22px;
+    border-radius: 10px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+    box-sizing: border-box;
+    width: 100%;
+    /* border: solid #5B6DCD 5px; */
+    /* border: 3px solid #09fba8; */
+    border: solid #2d2a4a 5px;
+    padding: 1px;
+}
+
+@media screen and (max-width:1025px) {
+    .layer2 {
+        display: none;
+    }
+}
+
+

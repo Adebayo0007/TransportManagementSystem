@@ -1,0 +1,64 @@
+﻿@using TrainStationManagementApplication.Dto;
+@using TrainStationManagementApplication.Dto.ResponseModel;
+@using TrainStationManagementApplication.Models.Entities;
+@model BaseResponse<RouteDto>;
+
+@{
+    ViewData["Title"] = "UpdateRoute";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   -->
+    <link rel="stylesheet" href="/css/updateRoute.css">
+</head>
+<body>
+    <form asp-action="UpdateRoute" asp-controller="Routes" enctype="multipart/form-data">
+        <div class="container">
+            <div class="layer2">
+                <div class="card">
+                    <div>
+                        <p class="p">UPDATE ROUTE</p>
+                    </div>
+                    <div class="fields">
+                        <div class="col-1">
+                            <i class="fa fa-train icon"></i>
+                            <label>Startinging Station:</label>
+                            <input type="text" name="StartingStation" asp-for="Data.StartingStation">
+                            <span asp-validation-for="Data.StartingStation" style="color: red"></span>
+                        </div>
+                        <div class="col-2">
+                            <i class="fa fa-train icon"></i>
+                            <label>Ending Station:</label>
+                            <input type="text" name="EndingStation" asp-for="Data.EndingStation">
+                            <span asp-validation-for="Data.EndingStation" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-ruler icon"></i>
+                            <label>Distance:</label>
+                            <input type="text" name="Distance" asp-for="Data.Distance">
+                            <span asp-validation-for="Data.Distance" style="color: red"></span>
+                        </div>
+
+                        <div class="button">
+                            <button style="border-radius: 25px; background-color: var(--var-soft-blue); width: 120px;">SUBMIT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

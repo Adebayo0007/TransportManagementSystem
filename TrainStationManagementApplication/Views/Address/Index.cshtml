@@ -1,0 +1,62 @@
+﻿@using TrainStationManagementApplication.Dto.ResponseModel;
+@model BaseResponse<IEnumerable<AddressDto>>;
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card strpied-tabled-with-hover">
+                <div class="card-header ">
+                    <h4 class="card-title">Address</h4>
+                    @*<p class="card-category">Here is a subtitle for this table</p>*@
+                </div>
+                <div class="card-body table-full-width table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <th>S/N</th>
+                        <th>Street</th>
+                        <th>State</th>
+                        <th>City</th>
+                        <th>Country</th>
+                       @* <th>View</th>
+                        <th>Edit</th>
+                        <th>Delete</th>*@
+                        </thead>
+                        <tbody>
+                            @{
+                                var serialNo = 1;
+                            }
+
+                            @foreach (var item in Model.Data)
+                            {
+                                <tr>
+                                    <td>@serialNo</td>
+                                    <td>@item.Street</td>
+                                    <td>@item.State</td>
+                                    <td>@item.City</td>
+                                    <td>@item.Country</td>
+
+                                   @* <td>
+                                        <a asp-action="GetAddress" asp-controller="Address" asp-route-Id="@item.Id">View</a>
+                                    </td>
+                                    <td>
+                                        <a asp-action="UpdateRoute" asp-controller="Address" asp-route-Id="@item.Id">Edit</a>
+                                    </td>
+                                    <td>
+                                        <a asp-action="DeleteAddress" asp-controller="Address" asp-route-Id="@item.Id">Delete</a>
+                                    </td>*@
+                                </tr>
+                                serialNo++;
+                            }
+
+                        </tbody>
+                    </table>
+                    @*<div>
+                    <a type="button" asp-action="AddTrain" asp-controller="Trains">Add new Train </a>
+                    </div>*@
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

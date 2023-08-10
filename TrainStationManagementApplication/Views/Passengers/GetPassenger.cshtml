@@ -1,0 +1,142 @@
+﻿@using System.Security.Claims;
+@using TrainStationManagementApplication
+@using TrainStationManagementApplication.Dto.ResponseModel;
+@model PassengerDto
+
+<head>
+    <link rel="stylesheet" href="~/css/body.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="card-container">
+        <a href="/" class="hero-image-container">
+            @*<img class="hero-image" src="https://i.postimg.cc/NfR2yhNs/image-equilibrium.jpg" alt="Spinning glass cube" />*@
+            <img class="hero-image" src="~/upload/image/@Model.Image" alt="profile image" width="150" height="150" />
+        </a>
+        <main class="main-content">
+            <h1>Passenger Details.</h1>
+            @*<p>Passenger Details.</p>*@
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>FirstName:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.FirstName</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>LastName:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.LastName</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Email:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.Email</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Phone Number:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.PhoneNumber</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Gender:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.Gender</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Street:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.Street</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>State:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.State</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>City:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.City</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Country:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.Country</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Transactions :</h2>
+                </div>
+                <div class="time-left">
+                    <a asp-action="GetAllTransactionsOfAPassenger" asp-controller="Transactions" asp-route-passengerId="@Model.Id" style="color:aliceblue;font-weight:bolder">Click</a>
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    @*<p>@Model.Country</p>*@
+                </div>
+            </div>
+        </main>
+       
+        <div style="display:flex;justify-content:center;" class="card-attribute">
+            @* <img src="https://i.postimg.cc/SQBzNQf1/image-avatar.png" alt="avatar" class="small-avatar" />
+            <p>Creation of <span><a href="#">Jules Wyvern</a></span></p>*@
+            @if (User.FindFirst(ClaimTypes.Role).Value == "Admin")
+            {
+                <div>
+                    <a style="color:white;text-decoration:none;" asp-action="Index">Back to List</a>
+                </div>
+            }
+            else
+            {
+                <div>
+                    <a style="color:white;text-decoration:none;" asp-action="UpdatePassenger" asp-controller="Passengers" asp-route-Id="@User.FindFirst(ClaimTypes.NameIdentifier).Value">
+                        Edit
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+    </div>
+   
+</body>

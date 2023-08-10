@@ -1,0 +1,95 @@
+﻿@using TrainStationManagementApplication.Dto;
+@model AdminDto;
+@using TrainStationManagementApplication.Models.Enums
+@{
+    ViewData["Title"] = "UpdateAdmin";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/updateAdmin.css">
+</head>
+<body>
+    <form asp-action="UpdateAdmin" asp-controller="Admins" enctype="multipart/form-data">
+        <div class="container">
+            <div class="layer2">
+                <div class="card">
+                    <div>
+                        <p class="p">UPDATE ADMIN</p>
+                    </div>
+                    <div class="fields">
+                        <div class="col-3">
+                            <i class="fa fa-user icon"></i>
+                            <label>First Name:</label>
+                            <input type="text" asp-for="FirstName">
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-user icon"></i>
+                            <label>Last Name:</label>
+                            <input type="tel" name="LastName" asp-for="LastName">
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-envelope icon"></i>
+                            <label>Email:</label>
+                            <input type="email" name="Email" asp-for="Email">
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-image icon"></i>
+                            <label>Image:</label>
+                            <input type="file" name="Image" asp-for="Image">
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-genderless icon"></i>
+                            <label>Gender:</label>
+                            @Html.DropDownListFor(model => model.Gender, new SelectList(Enum.GetValues(typeof(Gender))),new { @class="form-control"})
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-phone icon"></i>
+                            <label>Phone Number:</label>
+                            <input type="tel" name="PhoneNumber" asp-for="PhoneNumber">
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-address-card icon"></i>
+                            <label>Street:</label>
+                            <input name="Street" type="text" asp-for="Street">
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-address-card icon"></i>
+                            <label>State:</label>
+                            <input type="text" name="State" asp-for="State">
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-address-card icon"></i>
+                            <label>City:</label>
+                            <input type="text" name="City" asp-for="City">
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-address-card icon"></i>
+                            <label>Country:</label>
+                            <input type="text" name="Country" asp-for="Country">
+                        </div>
+
+                        <div class="button">
+                            <button style="border-radius: 27px; background-color: var(--var-soft-blue); width: 120px;">SUBMIT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

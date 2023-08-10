@@ -1,0 +1,73 @@
+﻿@using TrainStationManagementApplication.Models.Entities
+@model CreateRouteRequestModel
+
+@{
+    ViewData["Title"] = "AddRoute";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   -->
+    <link rel="stylesheet" href="/css/addRoute.css">
+</head>
+<body>
+    <form asp-action="AddRoute" asp-controller="Routes" enctype="multipart/form-data">
+        <div class="all">
+            <div class="container">
+                <div class="layer2">
+
+                    <div class="layer"></div>
+                    <div class="card">
+                        <div>
+                            <div class="round">
+                                <p class="p">REGISTER</p>
+                            </div>
+                            <div class="fields">
+                                <div class="col-1">
+                                    <!-- <label for="">FirstName</label> -->
+                                    <i class="fa fa-address-card icon"></i>
+                                    <input type="text" name="StartingStation" asp-for="StartingStation" class="startingStation-input" id="txtStartingStation" placeholder="StartingStation">
+                                    <br />
+                                    <span asp-validation-for="StartingStation" style="color: red"></span>
+                                </div>
+                                <div class="col-2">
+                                    <!-- <label for="">LastName</label> -->
+                                    <i class="fa fa-address-card icon"></i>
+                                    <input type="text" name="EndingStation" asp-for="EndingStation" class="endingStation-input" id="txtEndingStation" placeholder="EndingStation">
+                                    <br />
+                                    <span asp-validation-for="EndingStation" style="color: red"></span>
+                                </div>
+                                <div class="col-3">
+                                    <!-- <label for="">Email</label> -->
+                                    <i class="fa fa-address-card icon"></i>
+                                    <input type="tel" name="Distance" asp-for="Distance" class="distance-input" id="txtDistance" placeholder="Distance">
+                                    <br />
+                                    <span asp-validation-for="Distance" style="color: red"></span>
+                                </div>
+
+
+                                <div style="display: flex; justify-content: center; align-items: center;">
+
+                                    <button style="border-radius: 15px; height: 40px; width: 99px; font-weight: bolder;" type="submit" class="btn btn-register d-flex mx-auto mb-2" onclick="validate();">REGISTER</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </form>
+</body>
+</html>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

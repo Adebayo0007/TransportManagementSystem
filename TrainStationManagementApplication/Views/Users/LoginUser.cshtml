@@ -1,0 +1,62 @@
+﻿@*@using TrainStationManagementApplication.Dto*@
+@*@model LoginUserRequestModel*@
+@* Layout = null;
+<h3>Login</h3>*@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="~/Login/css/Login.css" />
+
+
+</head>
+<body>
+    <form asp-action="LoginUser" asp-controller="Users">
+
+    
+    <div class="container">
+        <div class="row align-items-center mt-5">
+            <div class="layer2"></div>
+            <div class="col-md-4 mt-5 offset-md-4 px-0">
+                <div class="layer"></div>
+                <div class="card">
+                    <div class="card-body mt-5">
+                        <div class="round">
+                            <p class="p">LOGIN</p>
+                        </div>
+                        <div class="fields">
+                            <div class="email">
+                                <i class="fa fa-envelope icon"></i>
+                                <input name="Email" type="email" class="email-input" id="txtEmail" placeholder="Email" />
+                            </div>
+                            <div class="password">
+                                <i class="fa fa-lock icon"></i>
+                                <input name="Password" type="password" class="pass-input" id="txtPass" placeholder="Password" />
+                            </div>
+                        </div>
+                        <div class="text-center msg" id="msg-div">
+                            <span id="message"></span>
+                        </div>
+                        <div class="d-flex mx-auto justify-content-between forgot p-1">
+                            @*<a href="#">Forgot Password?</a>
+                            <a href="#">Register?</a>*@
+                        </div>
+                        <button type="submit" class="btn btn-login d-flex mx-auto mb-2" onclick="validate();">LOGIN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+    <!--<script src="~/Login/js/Login.js"></script>-->
+
+</body>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

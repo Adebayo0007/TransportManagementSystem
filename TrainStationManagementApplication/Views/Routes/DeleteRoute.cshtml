@@ -1,0 +1,63 @@
+﻿@using TrainStationManagementApplication.Dto.ResponseModel;
+@model BaseResponse<RouteDto>
+
+
+
+<head>
+    <link rel="stylesheet" href="~/css/body.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="card-container">
+        <a href="/" class="hero-image-container">
+            @*<img class="hero-image" src="https://i.postimg.cc/NfR2yhNs/image-equilibrium.jpg" alt="Spinning glass cube" />*@
+            <img class="hero-image" src="~/train2.png" alt="Spinning glass cube" />
+        </a>
+        <main class="main-content">
+            <h1>Delete</h1>
+            <p>Are you sure you want to delete this?</p>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Starting Station:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>   @Html.DisplayFor(model => model.Data.StartingStation)</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Ending Station:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>   @Html.DisplayFor(model => model.Data.EndingStation)</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Distance:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>  @Html.DisplayFor(model => model.Data.Distance)</p>
+                </div>
+            </div>
+        </main>
+        <div class="card-attribute">
+            @* <img src="https://i.postimg.cc/SQBzNQf1/image-avatar.png" alt="avatar" class="small-avatar" />
+            <p>Creation of <span><a href="#">Jules Wyvern</a></span></p>*@
+            <form asp-action="DeleteRoute">
+                <input type="hidden" name="Id" value="@Model.Data.Id" />
+                <button style="background-color:blue; color:azure">Yes</button>
+
+                <a class="btn" asp-action="Index" style="color:azure; background-color:red;width:44px; height:34px">No</a>
+            </form>
+        </div>
+    </div>
+    </div>
+</body>
+
+

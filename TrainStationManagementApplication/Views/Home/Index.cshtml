@@ -1,0 +1,478 @@
+﻿<!DOCTYPE html>
+<html>
+    @{
+        Layout = null;
+    }
+   <head>
+
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+     <title>@ViewData["Title"] - TrainStationManagementApplication</title>
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="~/css1/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="~/css1/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="~/css1/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="~/images1/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="~/css1/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   </head>
+   <!-- body -->
+   <body style="background-color: #007bff !important;" class="main-layout">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="~/images1/loading.gif" alt="#" /></div>
+      </div>
+      <!-- end loader -->
+      <!-- header -->
+      @* <header>
+         <!-- header inner -->
+         <div class="header">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                     <div class="full">
+                        <div class="center-desk">
+                           <div class="logo">
+                              <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                     <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarsExample04">
+                           <ul class="navbar-nav mr-auto">
+                              <li class="nav-item active">
+                                 <a class="nav-link" href="index.html"> Home  </a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="about.html">About</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="furnitures.html">Furnitures</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="testimonial.html">Testimonial</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="contact.html">Contact Us</a>
+                              </li>
+                              <li class="nav-item d_none">
+                                 <a class="nav-link" href="#"><i class="fa fa-user-circle padd_right" aria-hidden="true"></i>Login/Register</a>
+                              </li>
+                              <li class="nav-item d_none">
+                                 <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                              </li>
+                           </ul>
+                        </div>
+                     </nav>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header> *@
+      <!-- end header inner -->
+      <!-- end header -->
+      <!-- banner -->
+      <section class="banner_main">
+         <div id="banner1" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+               <li data-target="#banner1" data-slide-to="0" class="active"></li>
+               <li data-target="#banner1" data-slide-to="1"></li>
+               <li data-target="#banner1" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <div class="container-fluid">
+                     <div class="carousel-caption">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="text-bg">
+                                 <h1>Welcome To</h1>
+                                 <span>Liberty Train Management Application</span>
+                                        <p>We're dedicated to transforming your travel experience by bringing the power of technology to your fingertips. We understand the challenges of booking train trips – the long queues, the uncertainty, and the time-consuming process. That's why we've crafted a solution that puts you in control and makes your journey planning effortless.</p>
+                                   <a asp-action="AddPassenger" asp-controller="Passengers"> Sign Up </a> <a asp-controller="Users" asp-action="LoginUser"> Login </a>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="text_img">
+                                 <figure><img src="~/train2.png" alt="#"/></figure>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container-fluid">
+                     <div class="carousel-caption">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="text-bg">
+                                 <h1>Welcome To</h1>
+                                 <span>Anthony Train Management Application</span>
+                                        <p>We're dedicated to transforming your travel experience by bringing the power of technology to your fingertips. We understand the challenges of booking train trips – the long queues, the uncertainty, and the time-consuming process. That's why we've crafted a solution that puts you in control and makes your journey planning effortless.</p>
+                                  <a asp-action="AddPassenger" asp-controller="Passengers"> Sign Up </a> <a asp-controller="Users" asp-action="LoginUser"> Login </a>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="text_img">
+                                 <figure><img src="~/train2.png" alt="#"/></figure>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container-fluid">
+                     <div class="carousel-caption">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="text-bg">
+                                 <h1>Welcome To</h1>
+                                 <span>Anthony Train Management Application</span>
+                                        <p>We're dedicated to transforming your travel experience by bringing the power of technology to your fingertips. We understand the challenges of booking train trips – the long queues, the uncertainty, and the time-consuming process. That's why we've crafted a solution that puts you in control and makes your journey planning effortless.</p>
+                                        <a asp-action="AddPassenger" asp-controller="Passengers"> Sign Up </a> <a asp-controller="Users" asp-action="LoginUser"> Login </a>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="text_img">
+                                 <figure><img src="~/train2.png" alt="#"/></figure>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </a>
+            <a class="carousel-control-next" href="#banner1" role="button" data-slide="next">
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </a>
+         </div>
+      </section>
+      <!-- end banner -->
+      <!-- three_box -->
+      <div class="three_box">
+         <div class="container">
+            <div style="margin-top:10vh;" class="row">
+               <div class="col-md-4">
+                  <div style="margin-bottom:3vh;" class="box_text">
+                        <h3>JOIN US ON A REMARKABLE JOURNEY:</h3>
+                     <i><img src="~/pix2.jpeg" alt="#"/></i>
+                        <p>We invite you to experience travel redefined. Embark on a journey that's not just about reaching your destination, but about savoring every moment along the way.</p>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="box_text">
+                        <h3>WHAT YOU CAN EXPECT:</h3>
+                        <i><img src="~/pix3.jpeg" alt="#" /></i>
+                        <p>Peaceful Travel: Whether you're a business traveler looking to maximize productivity or a leisure traveler seeking tranquility, our train service offers an environment that caters to your needs.</p>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="box_text">
+                        <h3>WHAT YOU CAN EXPECT:</h3>
+                        <i><img src="~/pix5.jpeg" alt="#" /></i>
+                        <p>Sleek and Modern Design: Our trains boast a contemporary design that blends aesthetics with functionality, providing you with an environment that's perfect for relaxation and productivity.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- three_box -->
+      <!-- about -->
+      <div  class="about">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>About Our Train Service </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-10 offset-md-1">
+                     <div class="about_img">
+                        <div class="about_box">
+                              <h3>Discover a New Standard in Train Travel with Our Premier Train Service </h3>
+                                <p>Scenic Views: Sit back and enjoy the beauty of the landscapes you pass through. Our train service has been strategically designed to offer you panoramic views, making your journey as picturesque as it is comfortable.</p>
+                                <p>Reliability and Punctuality: We understand the importance of your time. Our train service is known for its punctuality, ensuring that you reach your destination on schedule, every time.</p>
+                           <a class="read_more">Read More</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end about -->
+      <!-- wedo  section -->
+      <div class="wedo ">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>What We Do</h2>
+                        <p>Welcome to Anthony Train Station Management System! Your Journey, Simplified. </p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-10 offset-md-1">
+                  <div class="row">
+                     <div class="col-md-6 margin_bottom">
+                       <div class="work">
+                                @*<figure><img src="~/images1/img1.png" alt="#" /></figure>*@
+                                <figure><img style="border-radius:20px;" src="~/pix6.jpeg" alt="#" /></figure>
+                       </div>
+                        <div class="work_text">
+                                <h3>Seamless Online Booking:<br><span class="blu">Say goodbye to waiting in lines. With our system, you can browse through available train trips, select your preferred route, and book your tickets seamlessly online. No more hassle, just easy clicks.</span></h3>
+                        </div>
+                     </div>
+                     <div class="col-md-6 margin_bottom">
+                        <div class="work">
+                           @*<figure><img src="~/images1/img2.png" alt="#" /></figure>*@
+                                <figure><img style="border-radius:20px;" src="~/pix5.jpeg" alt="#" /></figure>
+                        </div>
+                        <div class="work_text">
+                                <h3>Secure Payments:<br><span class="blu">Your safety is paramount to us. We offer a secure payment gateway that allows you to make transactions with confidence. Whether you prefer cards or digital wallets, we've got you covered.</span></h3>
+                        </div>
+                     </div>
+                     <div class="col-md-6 margin_bottom">
+                        <div class="work">
+                           @*<figure><img src="~/images1/img3.png" alt="#" /></figure>*@
+                                <figure><img style="border-radius:20px;" src="~/pix8.jpeg" alt="#" /></figure>
+                        </div>
+                        <div class="work_text">
+                                <h3>Real-Time Updates: <br> <span class="blu">Stay informed about your journey. Receive real-time updates about train schedules, delays, and platform information. Your travel plans should be as smooth as possible, and we're here to keep you in the loop.</span></h3>
+                        </div>
+                     </div>
+                     <div class="col-md-6 margin_bottom">
+                        <div class="work">
+                           @*<figure><img src="~/images1/img4.png" alt="#" /></figure>*@
+                                <figure><img style="border-radius:20px;" src="~/pix1.jpeg" alt="#" /></figure>
+                        </div>
+                        <div class="work_text">
+                                <h3>Support at Your Fingertips: <br><span class="blu">Have a question? Need assistance? Our customer support team is just a message away. Reach out through our contact form for quick and friendly help.</span></h3>
+                        </div>
+                     </div>
+                  </div>
+                  <a class="read_more" href="#">See More</a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end wedo  section -->
+      <!-- testimonial -->
+      <div class="testimonial">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Testimonial</h2>
+                        <p>The Voice of Our Satisfied Travelers </p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <div id="myCarousel" class="carousel slide testimonial_Carousel " data-ride="carousel">
+                     <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                     </ol>
+                     <div class="carousel-inner">
+                        <div class="carousel-item active">
+                           <div class="container">
+                              <div class="carousel-caption ">
+                                 <div class="row">
+                                    <div class="col-md-6 margin_boot">
+                                       <div class="test_box">
+                                          <i><img src="images/tes.jpg" alt="#"/></i>
+                                                    <h4>John Smith:</h4>
+                                                    <span>(The journey was incredible)</span>
+                                                    <p>"I had the most incredible journey with Our Train Service. The comfort, the attentive staff, and the stunning views made it an experience I'll cherish forever. I felt like I was in a world of luxury, and the gourmet dining was the cherry on top!" </p>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6 margin_boot">
+                                       <div class="test_box">
+                                          <i><img src="~/images1/tes1.jpg" alt="#"/></i>
+                                                    <h4>David Martinez:</h4>
+                                                    <span>(Anthony Train Service has set a new benchmark )</span>
+                                                    <p>"I'm a frequent traveler, and I can confidently say that Our Train Service has set a new benchmark. The spacious interiors and the seamless connectivity allowed me to stay productive on the go. It's not just a train; it's a haven of convenience." </p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="container">
+                              <div class="carousel-caption">
+                                 <div class="row">
+                                    <div class="col-md-6 margin_boot">
+                                       <div class="test_box">
+                                          <i><img src="~/images1/tes.jpg" alt="#"/></i>
+                                                    <h4>Johnson Williams:</h4>
+                                          <span>(It's a special journey )</span>
+                                                    <p>"From the moment I stepped onboard, I knew this journey was going to be special. The ambiance, the hospitality – everything was top-notch. I was able to unwind and enjoy the journey like never before."</p>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6 margin_boot">
+                                       <div class="test_box">
+                                          <i><img src="~/images1/tes1.jpg" alt="#"/></i>
+                                                    <h4>Michael Thompson:</h4>
+                                                    <span>(Value their passengers' time )</span>
+                                                    <p>"Reliability matters to me, and Our Train Service delivered. The punctuality, the efficiency – it's evident that they value their passengers' time. This is the way train travel should be – smooth, comfortable, and on schedule."</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="container">
+                              <div class="carousel-caption">
+                                 <div class="row">
+                                    <div class="col-md-6 margin_boot">
+                                       <div class="test_box">
+                                          <i><img src="~/images1/tes.jpg" alt="#"/></i>
+                                          <h4>JCKOLO Drake:</h4>
+                                                    <span>(Can't wait to travel again)</span>
+                                                    <p>"The scenic views from the train were breathtaking. I felt like I was part of a movie. The comfort of the seats and the impeccable service made the entire trip a dream come true. Can't wait to travel with Our Train Service again!"</p>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6 margin_boot">
+                                       <div class="test_box">
+                                          <i><img src="~/images1/tes1.jpg" alt="#"/></i>
+                                                    <h4>ROCOYO Miller</h4>
+                                                    <span>(Truly a five-star experience!)</span>
+                                                    <p>"I was blown away by the attention to detail. From the elegant decor to the variety of entertainment options, it's clear that Our Train Service has gone above and beyond to make every moment memorable. Truly a five-star experience!"</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                     <span class="sr-only">Previous</span>
+                     </a>
+                     <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                     <span class="sr-only">Next</span>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end testimonial -->
+      </div>
+      <!--  footer -->
+      <footer id="contact">
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-4">
+                     <div class="titlepage">
+                        <h2>Contact Us</h2>
+                     </div>
+                  </div>
+                  <div class="col-md-8">
+                     <ul class="location_icon">
+                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a> Locatins</li>
+                        <li><a href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></a> +71 9087654321</li>
+                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>demo@gmail.com</li>
+                     </ul>
+                  </div>
+                  <div class="col-md-6">
+                     <form id="request" class="main_form">
+                        <div class="row">
+                           <div class="col-md-12 ">
+                              <input class="contactus" placeholder="Full Name" type="type" name="Full Name"> 
+                           </div>
+                           <div class="col-md-12">
+                              <input class="contactus" placeholder="Email" type="type" name="Email"> 
+                           </div>
+                           <div class="col-md-12">
+                              <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">                          
+                           </div>
+                           <div class="col-md-12">
+                              <textarea class="textarea" placeholder="Message" type="type" Message="Name">Message </textarea>
+                           </div>
+                           <div class="col-sm-col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                              <button class="send_btn">Send</button>
+                           </div>
+                           <div class="col-sm-col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                              <ul class="social_icon">
+                                 <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                 <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                 <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                                 <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="map">
+                        <figure><img src="~/images1/map.jpg" alt="#"/></figure>
+                     </div>
+                     <form class="bottom_form">
+                        <h3>Newsletter</h3>
+                        <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
+                        <button class="sub_btn">subscribe</button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <p>Copyright 2019 All Right Reserved By <a href="https://html.design/"> Free  html Templates</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="~/js1/jquery.min.js"></script>
+      <script src="~/js1/popper.min.js"></script>
+      <script src="~/js1/bootstrap.bundle.min.js"></script>
+      <script src="~/js1/jquery-3.0.0.min.js"></script>
+      <!-- sidebar -->
+      <script src="~/js1/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="~/js1/custom.js"></script>
+   </body>
+   </html>

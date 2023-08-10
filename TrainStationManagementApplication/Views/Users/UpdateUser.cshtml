@@ -1,0 +1,110 @@
+﻿@using TrainStationManagementApplication.Dto.ResponseModel;
+@using TrainStationManagementApplication.Models.Enums;
+@model BaseResponse<UserDto>;
+@{
+    ViewData["Title"] = "UpdateUser";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/updateUser.css">
+</head>
+<body>
+    <form asp-action="UpdateUser" asp-controller="Users" enctype="multipart/form-data">
+        <div class="container">
+            <div class="layer2">
+                <div class="card">
+                    <div>
+                        <p class="p">UPDATE USER</p>
+                    </div>
+                    <div class="fields">
+                        <div class="col-3">
+                            <i class="fa fa-user icon"></i>
+                            <label>First Name:</label>
+                            <input type="text" name="FirstName" asp-for="Data.FirstName">
+                            <span asp-validation-for="Data.FirstName" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-user icon"></i>
+                            <label>Last Name:</label>
+                            <input type="tel" name="LastName" asp-for="Data.LastName">
+                            <span asp-validation-for="Data.LastName" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-envelope icon"></i>
+                            <label>Email:</label>
+                            <input type="email" name="Email" asp-for="Data.Email">
+                            <span asp-validation-for="Data.Email" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-image icon"></i>
+                            <label>Image:</label>
+                             <input type="file" name="Image" asp-for="Data.Image">
+                        </div>
+                         <div class="col-3">
+                            <i class="fa fa-user icon"></i>
+                            <label>Role:</label>
+                            <input type="text" name="Role" asp-for="Data.Role">
+                            <span asp-validation-for="Data.Role" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-genderless icon"></i>
+                            <label>Gender:</label>
+                            @Html.DropDownListFor(model => model.Data.Gender, new SelectList(Enum.GetValues(typeof(Gender))),new { @class="form-control"})
+                            <span asp-validation-for="Data.Gender" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-phone icon"></i>
+                            <label>Phone Number:</label>
+                            <input type="tel" name="PhoneNumber" asp-for="Data.PhoneNumber">
+                            <span asp-validation-for="Data.PhoneNumber" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-address-card icon"></i>
+                            <label>Street:</label>
+                            <input name="Street" type="text" asp-for="Data.Street">
+                            <span asp-validation-for="Data.Street" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-address-card icon"></i>
+                            <label>State:</label>
+                            <input type="text" name="State" asp-for="Data.State">
+                            <span asp-validation-for="Data.State" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-address-card icon"></i>
+                            <label>City:</label>
+                            <input type="text" name="City" asp-for="Data.City">
+                            <span asp-validation-for="Data.City" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-address-card icon"></i>
+                            <label>Country:</label>
+                            <input type="text" name="Country" asp-for="Data.Country">
+                            <span asp-validation-for="Data.Country" style="color: red"></span>
+                        </div>
+
+                        <div class="button">
+                            <button style="border-radius: 27px; background-color: var(--var-soft-blue); width: 120px;">SUBMIT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

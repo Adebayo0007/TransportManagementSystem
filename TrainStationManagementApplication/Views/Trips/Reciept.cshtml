@@ -1,0 +1,62 @@
+﻿@using System.Security.Claims;
+@using TrainStationManagementApplication
+@using TrainStationManagementApplication.Dto.ResponseModel;
+@model BaseResponse<TrainDto>
+@{
+    Layout = null;
+}
+
+<div style="display: flex;margin-top: 20vh;justify-content: center;align-items: center;">
+
+    <div style="width: 50vw;height: 65vh;background-color: #0f3460;border-radius: 15px;">
+        <div style="display: flex;justify-content: space-between;height: 30%;">
+            <div style="width: 15%; text-align: center;font-weight: bolder; padding-top: 5%;padding-left: 1vh;color:white">AnthonyStation</div>
+            <div style="width: 40%;text-align: center;color:white"><h1>Reciept</h1></div>
+            <div style="width: 15%;"><img id="myImage" src="~/train2.png" alt="train image" width="100%" height="100%"></div>
+        </div>
+        <div style="height: 45%;padding: 2vh 2vw;">
+            <div style="display: flex;justify-content: space-between;font-size: large; margin-top: 1vh;margin-bottom: 1vw;color:white"><span>Name : </span><span>@Model.Data.Name</span></div>
+            <div style="display: flex;justify-content: space-between;font-size: large; margin-top: 1vh;margin-bottom: 1vw;color:white"><span>Amount : </span><span>₦@Model.Data.Amount</span></div>
+            <div style="display: flex;justify-content: space-between;font-size: large; margin-top: 1vh;margin-bottom: 1vw;color:white"><span>FirstName : </span><span>@User.FindFirst(ClaimTypes.Name).Value.Split(" ")[0]</span></div>
+            <div style="display: flex;justify-content: space-between;font-size: large; margin-top: 1vh;margin-bottom: 1vw;color:white"><span>LastName : </span><span>@User.FindFirst(ClaimTypes.Name).Value.Split(" ")[1]</span></div>
+            <div style="display: flex;justify-content: space-between;font-size: large; margin-top: 1vh;margin-bottom: 1vw;color:white"><span>Email : </span><span>@User.FindFirst(ClaimTypes.Email).Value</span></div>
+            <div style="display: flex;justify-content: space-between;font-size: large; margin-top: 1vh;margin-bottom: 1vw;color:white"><span>StartingStation : </span><span>@Model.Data.StartingStation</span></div>
+            <div style="display: flex;justify-content: space-between;font-size: large; margin-top: 1vh;margin-bottom: 1vw;color:white"><span>EndingStation : </span><span>@Model.Data.EndingStation</span></div>
+            <div style="display: flex;justify-content: space-between;font-size: large; margin-top: 1vh;margin-bottom: 1vw;color:white"><span>Date : </span><span>@Model.Data.DateCreated</span></div>
+            <div style="display: flex;justify-content: space-between;font-size: large; margin-top: 1vh;margin-bottom: 1vw;color:white"><span>Train Number : </span><span>@Model.Data.TrainNumber</span></div>
+
+        </div>
+        <div style="display: flex; padding-left: 20vw;color:white">
+           <button onclick="downloadPage()">Download Reciept</button>
+            @*<button>Download Reciept</button>*@
+            
+        </div>
+    </div>
+
+    <script>
+        function downloadPage() {
+            // Get the current page's HTML content`
+            const htmlContent = document.documentElement.outerHTML;
+
+            // Create a Blob containing the HTML content
+            const blob = new Blob([htmlContent], { type: "text/html" });
+
+            // Create a temporary anchor element to trigger the download
+            const downloadLink = document.createElement("a");
+            downloadLink.href = URL.createObjectURL(blob);
+
+            // Set the download attribute with the desired filename
+            downloadLink.download = "current_page.html";
+
+            // Append the anchor element to the document
+            document.body.appendChild(downloadLink);
+
+            // Simulate a click on the anchor element to trigger the download
+            downloadLink.click();
+
+            // Clean up: remove the anchor element
+            document.body.removeChild(downloadLink);
+        }
+    </script>
+
+</div>   

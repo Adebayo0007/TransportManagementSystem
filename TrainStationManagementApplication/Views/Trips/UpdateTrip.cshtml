@@ -1,0 +1,72 @@
+﻿
+@using TrainStationManagementApplication.Dto.ResponseModel;
+@model BaseResponse<TripDto>;
+@{
+    ViewData["Title"] = "UpdateTrip";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/updateTrip.css">
+</head>
+<body>
+    <form asp-action="UpdateTrip" asp-controller="Trip" enctype="multipart/form-data">
+        <div class="container">
+            <div class="layer2">
+                <div class="card">
+                    <div>
+                        <p class="p">UPDATE TRIP</p>
+                    </div>
+                    <div class="fields">
+                        <div class="col-1">
+                            <i class="far fa-user icon"></i>
+                            <Label>Trip Name:</Label>
+                            <input type="text" name="Trip Name:" asp-for="Data.TripName">
+                            <span asp-validation-for="Data.TripName" style="color: red"></span>
+                        </div>
+                        <div class="col-2">
+                            <i class="far fa-map-marker-alt icon"></i>
+                            <Label>Destination:</Label>
+                            <input type="text" name="Destination:" asp-for="Data.Destination">
+                            <span asp-validation-for="Data.Destination" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="far fa-clock icon"></i>
+                            <label>Departure Time:</label>
+                            <input type="date" name="Departure Time:" asp-for="Data.DepartureTime">
+                            <span asp-validation-for="Data.DepartureTime" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="far fa-hashtag icon"></i>
+                            <label>Seat Number:</label>
+                            <input type="number" name="Seat Number:" asp-for="Data.SeatNumber">
+                            <span asp-validation-for="Data.SeatNumber" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="far fa-ruler-horizontal icon"></i>
+                            <label>Distance:</label>
+                            <input type="text" name="Distance" asp-for="Data.Distance">
+                            <span asp-validation-for="Data.Distance" style="color: red"></span>
+                        </div>
+
+                        <div class="button">
+                            <button style="border-radius: 25px; background-color: var(--var-soft-blue); width: 120px;">SUBMIT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

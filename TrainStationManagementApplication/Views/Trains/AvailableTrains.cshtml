@@ -1,0 +1,205 @@
+﻿@using TrainStationManagementApplication.Dto
+@model IEnumerable<TrainDto>
+<head>
+    <link rel="stylesheet" href="~/css/body.css" asp-append-version="true" />
+</head>
+@*<table class="table">*@
+    @*<thead>
+        <tr>
+            <th>S/N</th>
+            <th>Name</th>
+            <th>TrainNumber</th>
+            <th>Capacity</th>
+            <th>AvailableSpace</th>
+            <th>IsAvailable</th>
+            <th>Amount</th>
+            <th>DepartureTime</th>
+            <th>StartingStation</th>
+            <th>EndingStation</th>
+            <th>Distance</th>
+            <th>Book</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var serialNo = 1;
+        }
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@serialNo</td>
+                <td>@item.Name</td>
+                <td>@item.TrainNumber</td>
+                <td>@item.Capacity</td>
+                <td>@item.AvailableSpace</td>
+                <td>@item.IsAvailable</td>
+                <td>@item.Amount</td>
+                <td>@item.DepartureTime</td>
+                <td>@item.StartingStation</td>
+                <td>@item.EndingStation</td>
+                <td>@item.Distance</td>
+
+                <td>
+                    @{
+                        // Assuming parameter1 and parameter2 are variables containing the values you want to pass
+                        var parameter1 = item.Amount;
+                        var parameter2 = item.Id;
+                    }
+
+                    @Html.ActionLink("Book", "Transaction", "Trips", new { parameter1 = parameter1, parameter2 = parameter2 }, null)
+
+                    @*<a asp-action="Transaction" asp-controller="Trips" asp-route-amount="@item.Amount">Book</a>*@
+@*                </td>
+                
+            </tr>
+            serialNo++;
+        }
+    </tbody>
+</table>*@
+
+
+                       
+
+
+        @foreach (var item in Model)
+        {
+            <div class="card-container">
+            <a href="/" class="hero-image-container">
+                @*<img class="hero-image" src="https://i.postimg.cc/NfR2yhNs/image-equilibrium.jpg" alt="Spinning glass cube" />*@
+                <img class="hero-image" src="~/train2.png" alt="Spinning glass cube" />
+            </a>
+            <main class="main-content">
+                <h1>Train Details</h1>
+                <p>Our Trains are nice and trusted.</p>
+                <div class="flex-row">
+                    <div class="coin-base">
+                        @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                        <h2>Name:</h2>
+                    </div>
+                    <div class="time-left">
+                        @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                        <p>@item.Name</p>
+                    </div>
+                </div>
+                <div class="flex-row">
+                    <div class="coin-base">
+                        @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                        <h2>TrainNumber:</h2>
+                    </div>
+                    <div class="time-left">
+                        @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                        <p>@item.TrainNumber</p>
+                    </div>
+                </div>
+                <div class="flex-row">
+                    <div class="coin-base">
+                        @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                        <h2>Amount:</h2>
+                    </div>
+                    <div class="time-left">
+                        @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                        <p>@item.Amount
+                        </p>
+                    </div>
+                </div>
+                <div class="flex-row">
+                    <div class="coin-base">
+                        @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                        <h2>Capacity:</h2>
+                    </div>
+                    <div class="time-left">
+                        @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                        <p>@item.Capacity</p>
+                    </div>
+                </div>
+                <div class="flex-row">
+                    <div class="coin-base">
+                        @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                        <h2>Available Space:</h2>
+                    </div>
+                    <div class="time-left">
+                        @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                        <p>@item.AvailableSpace</p>
+                    </div>
+                </div>
+                <div class="flex-row">
+                    <div class="coin-base">
+                        @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                        <h2>Is Available</h2>
+                    </div>
+                    <div class="time-left">
+                        @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                        <p>@item.IsAvailable</p>
+                    </div>
+                </div>
+                <div class="flex-row">
+                    <div class="coin-base">
+                        @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                        <h2>Departure Time:</h2>
+                    </div>
+                    <div class="time-left">
+                        @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                        <p>@item.DepartureTime</p>
+                    </div>
+                </div>
+                <div class="flex-row">
+                    <div class="coin-base">
+                        @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                        <h2>Starting Station:</h2>
+                    </div>
+                    <div class="time-left">
+                        @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                        <p>@item.StartingStation</p>
+                    </div>
+                </div>
+                <div class="flex-row">
+                    <div class="coin-base">
+                        @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                        <h2>Ending Station:</h2>
+                    </div>
+                    <div class="time-left">
+                        @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                        <p>@item.EndingStation</p>
+                    </div>
+                </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Distance:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@item.Distance</p>
+                </div>
+            </div>
+                <div style="display:flex !important;justify-content:center !important;background-color:red;color:white;font-weight:400;border-radius:15px;a" class="flex-row">
+                    @{
+                        // Assuming parameter1 and parameter2 are variables containing the values you want to pass
+                        var parameter1 = item.Amount;
+                        var parameter2 = item.Id;
+                    }
+
+                    @Html.ActionLink("Book", "Transaction", "Trips", new { parameter1 = parameter1, parameter2 = parameter2 }, null)
+                </div>
+  
+            </main>
+        </div>
+   
+    
+    
+
+     }
+
+                    
+
+ <script>
+
+        // Function to detect "Enter" key press and submit the form
+        document.getElementById("date").addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) { // 13 is the code for "Enter" key
+                document.getElementById("myForm").submit();
+            }
+        });
+    </script>

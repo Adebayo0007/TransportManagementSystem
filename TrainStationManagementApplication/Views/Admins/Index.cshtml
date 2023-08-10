@@ -1,0 +1,69 @@
+﻿@using TrainStationManagementApplication.Dto
+@model IEnumerable<AdminDto>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card strpied-tabled-with-hover">
+                <div class="card-header ">
+                    <h4 class="card-title">Passengers</h4>
+                    @*<p class="card-category">Here is a subtitle for this table</p>*@
+                </div>
+                <div class="card-body table-full-width table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <th>S/N</th>
+                        <th>FullName</th>
+                        <th>Email</th>
+                        <th>PhoneNumber</th>
+                        <th>Gender</th>
+                        <th>Street</th>
+                        <th>State</th>
+                        <th>City</th>
+                        <th>Country</th>
+                        <th>View</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                        </thead>
+                        <tbody>
+                            @{
+                                var serialNo = 1;
+                            }
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@serialNo</td>
+                                    <td>@item.FirstName @item.LastName</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.PhoneNumber</td>
+                                    <td>@item.Gender</td>
+                                    <td>@item.Street</td>
+                                    <td>@item.State</td>
+                                    <td>@item.City</td>
+                                    <td>@item.Country</td>
+
+                                    <td>
+                                        <a asp-action="GetAdmin" asp-controller="Admins" asp-route-Id="@item.Id"> View</a>
+                                    </td>
+                                    <td>
+                                        <a asp-action="UpdateAdmin" asp-controller="Admins" asp-route-Id="@item.Id">Edit</a>
+                                    </td>
+                                    <td>
+                                        <a asp-action="DeleteAdmin" asp-controller="Admins" asp-route-Id="@item.Id">Delete</a>
+                                    </td>
+                                </tr>
+                                serialNo++;
+                            }
+
+                        </tbody>
+                    </table>
+                    <div>
+                        <a type="button" asp-action="AddAdmin" asp-controller="Admins">Add new Admin </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

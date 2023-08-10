@@ -1,0 +1,102 @@
+﻿@using TrainStationManagementApplication.Models.Entities
+@model CreateTrainRequestModel
+
+@{
+    ViewData["Title"] = "AddTrain";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/addTrain.css">
+</head>
+<body>
+    <form asp-action="AddTrain" asp-controller="Trains" class="validate-form" enctype="multipart/form-data">
+        <div class="container">
+            <div class="layer2">
+                <div class="card">
+                    <div>
+                        <p class="p">REGISTER TRAIN</p>
+                    </div>
+                    <div class="fields">
+                        <div class="col-3">
+                            <i class="fa fa-user icon"></i>
+                            <label>Name:</label>
+                            <input type="text" name="Name" asp-for="Name">
+                            <span asp-validation-for="Name" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-train icon"></i>
+                            <label>Train Number:</label>
+                            <input type="tel" name="TrainNumber" asp-for="TrainNumber">
+                            <span asp-validation-for="TrainNumber" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-database icon"></i>
+                            <label>Capacity:</label>
+                            <input type="number" name="Capacity" asp-for="Capacity">
+                            <span asp-validation-for="Capacity" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-globe icon"></i>
+                            <label>Available Space:</label>
+                            <input type="number" name="AvailableSpace" asp-for="AvailableSpace">
+                            <span asp-validation-for="AvailableSpace" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-check-circle icon"></i>
+                            <label>Is Available:</label>
+                            <input type="checkbox" name="IsAvailable" asp-for="IsAvailable">
+                            <span asp-validation-for="IsAvailable"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fas fa-dollar-sign icon"></i>
+                            <label>Amount:</label>
+                            <input type="number" name="Amount" asp-for="Amount">
+                            <span asp-validation-for="Amount"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-clock icon"></i>
+                            <label>Departure Time:</label>
+                            <input type="date" name="DepartureTime" asp-for="DepartureTime">
+                            <span asp-validation-for="DepartureTime" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-train icon"></i>
+                            <label>Starting Station:</label>
+                            <input type="text" name="StartingStation" asp-for="StartingStation">
+                            <span asp-validation-for="EndingStation" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-train icon"></i>
+                            <label>Ending Station:</label>
+                            <input type="text" name="EndingStation" asp-for="EndingStation">
+                            <span asp-validation-for="EndingStation" style="color: red"></span>
+                        </div>
+                        <div class="col-3">
+                            <i class="fa fa-ruler icon"></i>
+                            <label>Distance:</label>
+                            <input type="text" name="Distance" asp-for="Distance" required>
+                            <span asp-validation-for="Distance" style="color: red"></span>
+                        </div>
+
+                        <div class="button">
+                            <button style="border-radius: 27px; background-color: var(--var-soft-blue); width: 120px;">SUBMIT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

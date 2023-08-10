@@ -1,0 +1,77 @@
+﻿
+@using TrainStationManagementApplication.Dto.ResponseModel;
+@model BaseResponse<TripDto>;
+
+<head>
+    <link rel="stylesheet" href="~/css/body.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="card-container">
+        <a href="/" class="hero-image-container">
+            @*<img class="hero-image" src="https://i.postimg.cc/NfR2yhNs/image-equilibrium.jpg" alt="Spinning glass cube" />*@
+            <img class="hero-image" src="~/train2.png" alt="Spinning glass cube" />
+        </a>
+        <main class="main-content">
+            <h1>Trip Details</h1>
+            <p>Our Trips are nice and trusted.</p>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Trip Name:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.Data.TripName</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Destination:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.Data.Destination</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Departure Time:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.Data.DepartureTime</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Seat Number:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.Data.SeatNumber</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Distance:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.Data.Distance</p>
+                </div>
+            </div>
+        </main>
+        <div class="card-attribute">
+            @* <img src="https://i.postimg.cc/SQBzNQf1/image-avatar.png" alt="avatar" class="small-avatar" />
+            <p>Creation of <span><a href="#">Jules Wyvern</a></span></p>*@
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>

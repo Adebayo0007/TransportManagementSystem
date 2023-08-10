@@ -1,0 +1,135 @@
+﻿<head>
+    <link rel="stylesheet" href="~/css/input.css" asp-append-version="true" />
+</head>
+<body>
+
+
+
+<section class="container">
+    <div class="login-container">
+        <div class="circle circle-one"></div>
+        <div class="form-container">
+            <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" class="illustration" />
+            <h1 class="opacity">PAYMENT</h1>
+            <form id="paymentForm">
+                    <input id="email-address" type="text" placeholder="EMAIL" />
+                <input type="tel" id="amount" required readonly />
+                    <button id="btn" type="submit">PROCEED</button>
+            </form>
+            <div class="register-forget opacity">
+                <a href="">REGISTER</a>
+                <a href="">FORGOT PASSWORD</a>
+            </div>
+        </div>
+        <div class="circle circle-two"></div>
+    </div>
+    <div class="theme-btn-container"></div>
+</section>
+<script src="~/js/input.js" asp-append-version="true"></script>
+<script>
+    let back = location.href.split('?')[1];
+    let trainId = back.split('=')[2];
+    let amount = back.split('=')[1].split('&')[0];
+    let amountInput = document.getElementById('amount');
+    amountInput.value = Number(amount);
+    //document.getElementById("id").value = trainId;
+    console.log(amount);
+    console.log(trainId);
+ </script>
+
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script>
+
+        const paymentForm = document.getElementById('paymentForm');
+        paymentForm.addEventListener("submit", payWithPaystack, false);
+        //document.getElementById('btn').addEventListener("click", payWithPaystack);
+        function payWithPaystack(e) {
+            debugger;
+            e.preventDefault();
+
+            let handler = PaystackPop.setup({
+                key: 'pk_test_fe5a54565a0b6f9a04eb69e5ce395810ea27a2bc', // Replace with your public key
+                email: document.getElementById("email-address").value,
+                amount: document.getElementById("amount").value * 100,
+                ref: '' + Math.floor((Math.random() * 1000000000) + 1),  // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+                // label: "Optional string that replaces customer email"
+                onClose: function () {
+                    alert('Window closed.');
+                },
+                callback: function (response) {
+                    let message = 'Payment complete! Reference: ' + response.reference;
+                    alert(message);
+                    location.href = `https://localhost:7297/Transactions/AddTransaction/?trainId=${trainId}`;
+                    location.href = `https://localhost:7297/Trips/AddTrip/?trainId=${trainId}`;
+                }
+
+            });
+            handler.openIframe();
+        }
+
+    </script>
+   
+</body>
+
+
+
+
+
+
+
+@*
+<form id="paymentForm">
+    <div class="form-group">
+        <input type="email" id="email-address" required />
+    </div>
+    <div class="form-group">
+        <input type="tel" id="amount" required readonly />
+    </div>
+    <div class="form-head"><span class="reg-form">Payment Request</span></div>
+    <div class="form-bottom">
+        <button style="border: 0%;" class="submit-form" type="submit" onclick="payWithPaystack()"> Pay </button>
+    </div>
+</form>
+
+<script>
+    debugger;
+    let back = location.href.split('?')[1];
+    debugger;
+    let trainId = back.split('=')[2];
+    let amount = back.split('=')[1].split('&')[0];
+    let amountInput = document.getElementById('amount');
+        amountInput.value  = Number(amount);
+        document.getElementById("id").value = trainId;
+        console.log(amount);
+        console.log(trainId);
+    </script>
+    <script>
+    const paymentForm = document.getElementById('paymentForm');
+    paymentForm.addEventListener("submit", payWithPaystack, false);
+    function payWithPaystack(e) {
+        e.preventDefault();
+
+        let handler = PaystackPop.setup({
+            key: 'pk_test_5d73affc3fe709e60242345418603d51f84bf578', // Replace with your public key
+            email: document.getElementById("email-address").value,
+            amount: document.getElementById("amount").value * 100,
+            ref: '' + Math.floor((Math.random() * 1000000000) + 1),  // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+            // label: "Optional string that replaces customer email"
+            onClose: function () {
+                alert('Window closed.');
+            },
+            callback: function (response) {
+                let message = 'Payment complete! Reference: ' + response.reference;
+                alert(message);
+                location.href = `https://localhost:7297/Transactions/AddTransaction/?trainId=${trainId}`;
+                location.href = `https://localhost:7297/Trips/AddTrip/?trainId=${trainId}`;
+                //setTimeout(() => {
+
+                //}, 1000)
+            }
+
+        });
+        handler.openIframe();
+    }
+
+    </script>*@

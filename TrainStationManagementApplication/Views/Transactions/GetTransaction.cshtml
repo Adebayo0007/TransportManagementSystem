@@ -1,0 +1,109 @@
+﻿@using TrainStationManagementApplication
+@using TrainStationManagementApplication.Dto.ResponseModel;
+@model TransactionDto
+
+
+
+<head>
+    <link rel="stylesheet" href="~/css/body.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="card-container">
+        <a href="/" class="hero-image-container">
+            @*<img class="hero-image" src="https://i.postimg.cc/NfR2yhNs/image-equilibrium.jpg" alt="Spinning glass cube" />*@
+            <img class="hero-image" src="~/train2.png" alt="Spinning glass cube" />
+        </a>
+        <main class="main-content">
+            <h1>Transaction Details</h1>
+            <p>Our Trains are nice and trusted.</p>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Amount:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.Amount</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>First Name:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.FirstName</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Last Name:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.LastName</p>
+                </div>
+            </div>  
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Email:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.Email</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Phone Number:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.PhoneNumber</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Gender:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.Gender</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Reference Number:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.ReferenceNumber</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="coin-base">
+                    @*<img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image" />*@
+                    <h2>Date Created:</h2>
+                </div>
+                <div class="time-left">
+                    @*<img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image" />*@
+                    <p>@Model.DateCreated</p>
+                </div>
+            </div>
+        </main>
+        <div class="card-attribute">
+            @* <img src="https://i.postimg.cc/SQBzNQf1/image-avatar.png" alt="avatar" class="small-avatar" />
+            <p>Creation of <span><a href="#">Jules Wyvern</a></span></p>*@
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>

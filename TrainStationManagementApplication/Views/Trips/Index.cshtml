@@ -1,0 +1,61 @@
+﻿@using TrainStationManagementApplication.Dto.ResponseModel;
+
+@model BaseResponse<IEnumerable<TripDto>>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card strpied-tabled-with-hover">
+                <div class="card-header ">
+                    <h4 class="card-title">Trips</h4>
+                    @*<p class="card-category">Here is a subtitle for this table</p>*@
+                </div>
+                <div class="card-body table-full-width table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <th>S/N</th>
+                        <th>TripName</th>
+                        <th>Destination</th>
+                        <th>DepartureTime</th>
+                        <th>SeatNumber</th>
+                        <th>Distance</th>
+                        <th>View</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                        </thead>
+                        <tbody>
+                            @{
+                                var serialNo = 1;
+                            }
+
+                            @foreach (var item in Model.Data)
+                            {
+                                <tr>
+                                    <td>@serialNo</td>
+                                    <td>@item.TripName</td>
+                                    <td>@item.Destination</td>
+                                    <td>@item.DepartureTime</td>
+                                    <td>@item.SeatNumber</td>
+                                    <td>@item.Distance</td>
+
+                                    <td>
+                                        <a asp-action="GetTrip" asp-controller="Trips" asp-route-id="@item.Id">View</a>
+                                    </td>
+                                    <td>
+                                        <a asp-action="UpdateTrip" asp-controller="Trips" asp-route-Id="@item.Id">Edit</a>
+                                    </td>
+                                    <td>
+                                        <a asp-action="DeleteTrip" asp-controller="Trips" asp-route-Id="@item.Id">Delete</a>
+                                    </td>
+                                </tr>
+                                serialNo++;
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+       </div>
+    </div>
+</div>

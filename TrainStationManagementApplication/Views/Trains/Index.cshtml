@@ -1,0 +1,79 @@
+﻿@using TrainStationManagementApplication.Dto
+@model IEnumerable<TrainDto>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div  class="card strpied-tabled-with-hover">
+                <div class="card-header ">
+                    <h4 class="card-title">Trains</h4>
+                    @*<p class="card-category">Here is a subtitle for this table</p>*@
+                </div>
+                <div class="card-body table-full-width table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <th>S/N</th>
+                        <th>Name</th>
+                        <th>TrainNumber</th>
+                        <th>Capacity</th>
+                        <th>AvailableSpace</th>
+                        <th>IsAvailable</th>
+                        <th>Amount</th>
+                        <th>DepartureTime</th>
+                        <th>StartingStation</th>
+                        <th>EndingStation</th>
+                        <th>Distance</th>
+                        <th>View</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                        <th>Trips</th>
+                        </thead>
+                        <tbody>
+                            @{
+                                var serialNo1 = 1;
+                            }
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@serialNo1</td>
+                                    <td>@item.Name</td>
+                                    <td>@item.TrainNumber</td>
+                                    <td>@item.Capacity</td>
+                                    <td>@item.AvailableSpace</td>
+                                    <td>@item.IsAvailable</td>
+                                    <td>@item.Amount</td>
+                                    <td>@item.DepartureTime</td>
+                                    <td>@item.StartingStation</td>
+                                    <td>@item.EndingStation</td>
+                                    <td>@item.Distance</td>
+
+                                    <td>
+                                        <a asp-action="GetTrainById" asp-controller="Trains" asp-route-id="@item.Id">View</a>
+                                    </td>
+                                    <td>
+                                        <a asp-action="UpdateTrain" asp-controller="Trains" asp-route-Id="@item.Id">Edit</a>
+                                    </td>
+                                    <td>
+                                        <a asp-action="DeleteTrain" asp-controller="Trains" asp-route-Id="@item.Id">Delete</a>
+                                    </td>
+                                    <td>
+                                        <a asp-action="GetAllTripsOfATrain" asp-controller="Trips" asp-route-trainNumber="@item.TrainNumber" style="padding-top: 20.5px">Trips</a>
+                                    </td>
+                                </tr>
+                                serialNo1++;
+                            }
+
+                        </tbody>
+                    </table>
+                    <div>
+                        <a type="button" asp-action="AddTrain" asp-controller="Trains">Add new Train </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

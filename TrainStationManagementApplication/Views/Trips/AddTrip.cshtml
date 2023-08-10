@@ -1,0 +1,116 @@
+﻿@using TrainStationManagementApplication
+@using TrainStationManagementApplication.Dto.ResponseModel;
+@model BaseResponse<TrainDto>;
+
+@{
+    TempData["specialId"] = Model.Data.Id;
+    Layout = null;
+}@*
+<form id="form" asp-action="AddTrip" asp-controller="Trips">
+    <span>Name: </span> <input value="@Model.Data.Name" name="TripName" /> <br/>
+    <span>Train Number: </span> <input value="@Model.Data.TrainNumber" name="TrainNumber"  /> <br/>
+    <span>Capacity: </span> <input value="@Model.Data.Capacity" /><br/>
+    <span>Available Space: </span> <input value="@Model.Data.AvailableSpace" /> <br/>
+    <span>Departure Time: </span> <input value="@Model.Data.DepartureTime" name="DepartureTime" /><br/>
+    <span>Starting Station: </span> <input value="@Model.Data.StartingStation" /><br />
+    <span>Ending Station: </span> <input value="@Model.Data.EndingStation" /><br/>
+    <span>Distance: </span> <input value="@Model.Data.Distance" /><br />
+    <input value="@Model.Data.Id" name="TrainId" hidden/><br />
+    <span>Destination: </span> <input name="Destination" /><br />
+    <button id="btnbtn" type="submit"> Proceed </button>
+    
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+@*<script>
+    let btn = document.getElementById("btnbtn");
+    if (btn != null) {
+
+        btn.addEventListener('click', function (e) {
+            debugger
+            //e.preventDefault();
+            window.location.assign = `https://localhost:7297/Trips/Reciept/?trainId=${@Model.Data.Id}`;
+        }),
+                        }
+
+</script>*@
+
+@*<script>
+    function redirectToReceipt() {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+
+        // Get the trainId value from the hidden input field
+      //  let trainId = document.getElementsByName("TrainId")[0].value;
+
+        // Redirect to the specified URL with the trainId value
+        window.location.assign(`https://localhost:7297/Trips/Reciept/?trainId=${@Model.Data.Id}`);
+
+        setTimeout(submitForm, 500);
+        // Return false to prevent the form from being submitted in case there's an issue with redirection.
+        return false;
+    }
+
+    function submitForm() {
+        document.getElementById("form").submit();
+    }
+</script>
+*@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/addTrip.css">
+    <title>Document</title>
+    <style>
+.fields > div {
+    margin: 1vh 0vw;
+    display: flex;
+    justify-content: space-between;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="layer2">
+        <form id="form" asp-action="AddTrip" asp-controller="Trips">
+         <div class="card">
+                <div>
+                        <p class="p">REGISTER TRIP</p>
+              </div>
+              <div style="margin: 2vh 1vw;" class="fields">
+                <div><span>Name: </span> <input value="@Model.Data.Name" name="TripName" /></div>
+                <div><span>Train Number: </span> <input value="@Model.Data.TrainNumber" name="TrainNumber"  /></div>
+                <div><span>Capacity: </span> <input value="@Model.Data.Capacity" /></div>
+                <div><span>Available Space: </span> <input value="@Model.Data.AvailableSpace" /></div>
+                <div> <span>Departure Time: </span> <input value="@Model.Data.DepartureTime" name="DepartureTime" /></div>
+                <div><span>Starting Station: </span> <input value="@Model.Data.StartingStation" /></div>
+                <div> <span>Ending Station: </span> <input value="@Model.Data.EndingStation" /></div>
+                <div><span>Distance: </span> <input value="@Model.Data.Distance"  name="Distance"/></div>
+                <div><input value="@Model.Data.Id" name="TrainId" hidden/></div>
+                <div> <span>Destination: </span> <input name="Destination" /></div>
+                <div><button id="btn" type="submit"> Proceed </button></div>
+
+            </div>
+         </div>
+        </form>
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+   </div>
+</body>
+
+
+@*<script>
+    let btn = document.getElementById("form");
+    btn.addEventListener('submit', function (e) {
+        debugger;
+        e.preventDefault();
+        window.location.href= `https://localhost:7297/Trips/Reciept/?trainId=${"@Model.Data.Id"}`;
+    });
+
+</script>*@
